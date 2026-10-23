@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10100f">
-  <meta name="description" content="Portfolio herních experimentů — interaktivní světy, malé hry a digitální objekty.">
+  <meta name="description" content="Portfolio herních experimentů — Raketka, Čeština, interaktivní světy a digitální objekty.">
   <title>PLAY / PORTFOLIO — Herní světy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +17,8 @@
       --muted: #85857d;
       --line: rgba(240,239,232,.18);
       --line-strong: rgba(240,239,232,.38);
-      --acid: #c8fb52;
-      --orange: #ff6847;
+      --acid: #b99aff;
+      --orange: #d8a7ff;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Manrope', Arial, sans-serif;
       --mono: 'DM Mono', monospace;
@@ -63,7 +63,7 @@
     .top-right a { transition: color .25s; }
     .top-right a:hover { color: var(--acid); }
     .availability { display:flex; align-items:center; gap:8px; color:var(--muted); }
-    .availability::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--acid); box-shadow:0 0 13px rgba(200,251,82,.7); }
+    .availability::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--acid); box-shadow:0 0 13px rgba(185,154,255,.75); }
     .hero {
       min-height: min(980px, 100svh); min-height: max(740px, 100svh); position:relative; display:grid;
       grid-template-columns: 1fr 1fr; align-items:center; overflow:hidden; border-bottom:1px solid var(--line);
@@ -282,14 +282,14 @@
         <div class="section-kicker reveal"><span class="dot"></span><span>01 / Vybrané projekty</span><span>— 2026 / ongoing</span></div>
         <div class="projects-head">
           <h2 class="section-title reveal" id="projects-title">PLAY<span style="color:var(--muted)">/</span><br><em>GROUND.</em></h2>
-          <p class="projects-intro reveal">Malé hry, velké nápady. Každý projekt je nový <strong>level</strong>, vlastní pravidla a důvod zkusit to ještě jednou.</p>
+          <p class="projects-intro reveal">Pět herních světů. Dva už čekají na kliknutí — každý má vlastní pravidla, tempo a důvod zkusit to ještě jednou.</p>
         </div>
         <div class="projects-list">
           <a class="project-row is-live" href="https://michalhladik489-create.github.io/raketa/main" target="_blank" rel="noopener noreferrer" data-project="0" data-art="rocket" data-preview="01" aria-label="Otevřít projekt Raketka v novém okně">
             <span class="project-num">01</span><h3 class="project-name">Raket<span class="project-italic">ka</span></h3><span class="project-meta">ARCADE / REFLEX<br><span class="status">HRA JE ONLINE</span></span><span class="project-arrow">↗</span>
           </a>
-          <a class="project-row" href="https://michalhladik489-create.github.io/Typing" data-placeholder="true" data-project="1" data-art="orbit" data-preview="02" aria-label="Nový projekt 2 — odkaz bude doplněn">
-            <span class="project-num">02</span><h3 class="project-name">Češti<span class="project-italic">na</span></h3><span class="project-meta">INTERACTIVE / STUDY<br><span class="status">HRA JE ONLINE</span></span><span class="project-arrow">↗</span>
+          <a class="project-row is-live" href="https://michalhladik489-create.github.io/Typing/cestina.html" target="_blank" rel="noopener noreferrer" data-project="1" data-art="orbit" data-preview="02" aria-label="Otevřít projekt Čeština v novém okně">
+            <span class="project-num">02</span><h3 class="project-name">Češ<span class="project-italic">tina</span></h3><span class="project-meta">TYPING / LANGUAGE<br><span class="status">HRA JE ONLINE</span></span><span class="project-arrow">↗</span>
           </a>
           <a class="project-row" href="#" data-placeholder="true" data-project="2" data-art="race" data-preview="03" aria-label="Nový projekt 3 — odkaz bude doplněn">
             <span class="project-num">03</span><h3 class="project-name">Nový projekt<span class="project-italic">.</span></h3><span class="project-meta">SPEED / EXPERIMENT<br><span class="status">PŘIPRAVUJE SE</span></span><span class="project-arrow">↗</span>
@@ -398,19 +398,19 @@
           if ('outputEncoding' in renderer) renderer.outputEncoding = THREE.sRGBEncoding;
 
           scene.add(new THREE.AmbientLight(0xffffff, .72));
-          const keyLight = new THREE.PointLight(0xc8fb52, 2.5, 24); keyLight.position.set(3, 2.7, 4); scene.add(keyLight);
+          const keyLight = new THREE.PointLight(0xb99aff, 2.5, 24); keyLight.position.set(3, 2.7, 4); scene.add(keyLight);
           const coolLight = new THREE.PointLight(0x9bb6ff, 2.8, 20); coolLight.position.set(-3, -1, 2); scene.add(coolLight);
           const rimLight = new THREE.PointLight(0xff6547, 1.8, 18); rimLight.position.set(1, -3, -1); scene.add(rimLight);
 
           knotGroup = new THREE.Group(); scene.add(knotGroup);
           const geo = new THREE.TorusKnotGeometry(1.22, .34, 220, 28, 2, 3);
-          const mat = new THREE.MeshPhysicalMaterial({ color:0xc8fb52, metalness:.78, roughness:.2, clearcoat:1, clearcoatRoughness:.12, reflectivity:.9 });
+          const mat = new THREE.MeshPhysicalMaterial({ color:0xb99aff, metalness:.78, roughness:.2, clearcoat:1, clearcoatRoughness:.12, reflectivity:.9 });
           knot = new THREE.Mesh(geo, mat); knotGroup.add(knot);
           const wire = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color:0xf0efe8, wireframe:true, transparent:true, opacity:.11 }));
           wire.scale.setScalar(1.008); knotGroup.add(wire);
           orbit = new THREE.Mesh(new THREE.TorusGeometry(1.95, .008, 6, 180), new THREE.MeshBasicMaterial({ color:0xf0efe8, transparent:true, opacity:.52 }));
           orbit.rotation.set(.87, .27, -.47); knotGroup.add(orbit);
-          const orbit2 = new THREE.Mesh(new THREE.TorusGeometry(2.24, .004, 4, 180), new THREE.MeshBasicMaterial({ color:0xc8fb52, transparent:true, opacity:.27 }));
+          const orbit2 = new THREE.Mesh(new THREE.TorusGeometry(2.24, .004, 4, 180), new THREE.MeshBasicMaterial({ color:0xb99aff, transparent:true, opacity:.27 }));
           orbit2.rotation.set(1.8, -.4, .75); knotGroup.add(orbit2);
 
           const particleCount = 480;
